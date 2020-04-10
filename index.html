@@ -1,16 +1,305 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="styles.css">
-    <script src='app.js'></script>
-  </head>
-  <body onload="startGame()">
-    <div id="canvas-container"></div>
+   <head>
+      <title>Connect-4</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <link rel="stylesheet" href="styles.css">
+      <!--<script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-1.1.1.min.js"></script>-->         
+      <!--<script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>-->
+      <script src='app.js'></script>
+   </head>
+   
+   <body onload="startGame()"> 
+    
+    <div class="container">
+        <div class="row">
+        </div>
+
+        <div class="row">
+        </div>
+
+        <div class="row">
+            <div class="col l1 offset-l3 grey">
+            <div id = "a0" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a1" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a2" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a3" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a4" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a5" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a6"class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col l1 offset-l3 grey">
+            <div id = "a7" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a8" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a9" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a10" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a11" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a12" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a13" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col l1 offset-l3 grey">
+            <div id = "a14" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a15" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a16" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a17" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a18" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a19" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a20" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col l1 offset-l3 grey">
+            <div id = "a21" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a22" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a23" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a24" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a25" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a26" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a27" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col l1 offset-l3 grey">
+            <div id = "a28" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a29" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a30" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a31" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a32" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a33" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a34" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col l1 offset-l3 grey">
+            <div id = "a35" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a36" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a37" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a38" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+            <div class="col l1 grey">
+            <div id = "a39" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        
+            <div class="col l1 grey">
+            <div id = "a40" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+    
+            <div class="col l1 grey">
+            <div id = "a41" class="circle black">
+                <span><img></span>
+            </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col l1 offset-l3 btn" onclick="choose(0)">1
+            </div>
+            <div class="col l1 btn" onclick="choose(1)">2
+            </div>
+            <div class="col l1 btn" onclick="choose(2)">3
+            </div>
+            <div class="col l1 btn" onclick="choose(3)">4
+            </div>
+            <div class="col l1 btn" onclick="choose(4)">5
+            </div>
+            <div class="col l1 btn" onclick="choose(5)">6
+            </div>
+            <div class="col l1 btn" onclick="choose(6)">7
+            </div>
+        </div>
+    </div>
+
     <!--<button onclick="play()">Play</button>-->
-    <button onclick="myVar = setInterval(play, 2000)">Play</button>
+    <button class="btn waves-effect waves-light" onclick="play()">Play
+      <i class="material-icons right">send</i>
+    </button>
 
-    <button onclick="clearInterval(myVar)">Stop</button>
-
-  </body>
+   </body>
 </html>
+
+ 
