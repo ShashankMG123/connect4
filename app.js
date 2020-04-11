@@ -3,16 +3,16 @@ var cols = [0,0,0,0,0,0,0];
 var turn = 1;
 var flag = 0;
 var win = 0;
+var move = -1;
 
 function startGame() {
-  myGameArea.start();
   var i,j ;
 
   for (j=0; j<=5; j++)
   {
     for (i=0; i<=6; i++)
     {
-      var obj = new component(50,50,"black",60*i+85, 60*j+70);
+      var obj = new component("black");
       myGamePiece.push(obj);
     }
   }
@@ -21,14 +21,15 @@ function startGame() {
 
 function changeColor(piece,pos,color){
   piece[pos].color=color;
-  ctx = myGameArea.context;
-  ctx.fillStyle = color;
-  ctx.fillRect(piece[pos].x, piece[pos].y, piece[pos].width, piece[pos].height);
+  var n = pos.toString();
+  var a = "a".concat(n);
+  var b = "circle ".concat(color)
+  document.getElementById(a).className = b;
 }
 
 
 function play(){
-  var randnum, pos;
+  var pos;
 
     if(turn==0)
     {
@@ -38,7 +39,7 @@ function play(){
         if(xhr.readyState == 4 && xhr.status==200){
           if(flag == 0){
             var move = xhr.responseText;
-	    move = parseInt(move)
+	          move = parseInt(move)
             console.log(move);
             if(cols[move]<6)
             {
@@ -46,8 +47,8 @@ function play(){
               cols[move] += 1;
               changeColor(myGamePiece,pos,"blue");
             }
-	    var board = boardState();
-	    checkwinner(board);
+	          var board = boardState();
+	          checkwinner(board);
             flag = 1;
           }
         }
@@ -62,19 +63,25 @@ function play(){
     }
     else
     {
-      //randnum = Math.floor(Math.random()*7);
-      randnum = prompt('enter col');
-      randnum = parseInt(randnum);
-      if(cols[randnum]<6)
-      {
-	pos = randnum + (5-cols[randnum])*7;
-	cols[randnum] += 1;
-	changeColor(myGamePiece,pos,"red");
-        turn = 0;
-        flag = 0;
+      if(move == -1){
+        alert("Your turn");
       }
-      var board = boardState();
-      checkwinner(board);
+      else{
+        if(cols[move]<6)
+        {
+          pos = move + (5-cols[move])*7;
+          cols[move] += 1;
+          changeColor(myGamePiece,pos,"red");
+          turn = 0;
+          flag = 0;
+          move = -1;
+        }
+        else{
+          alert("Column is full");
+        }
+        var board = boardState();
+        checkwinner(board);
+      }
     }
 
 }
@@ -86,7 +93,6 @@ function checkwinner(board){
       var res = xhr2.responseText;
       var res = parseInt(res);
       if(res == -1 || res == 1){
-        //clearInterval(myVar);
         if(res == 1)
 	  {
             alert("Blue Won");
@@ -126,23 +132,14 @@ function boardState(){
   return board;
 }
 
-function component(width, height, color, x, y){
-  this.width = width;
-  this.height = height;
-  this.x = x;
-  this.y = y;
+function component(color){
   this.color = color;
-  ctx = myGameArea.context;
-  ctx.fillStyle = color;
-  ctx.fillRect(this.x, this.y, this.width, this.height)
 }
 
-var myGameArea = {
-  canvas : document.createElement("canvas"),
-  start : function() {
-    this.canvas.width = 580;
-    this.canvas.height = 500;
-    this.context = this.canvas.getContext("2d");
-    document.getElementById("canvas-container").appendChild(this.canvas);
+function choose(num){
+  if(turn == 1){
+    move = num;
+    play();
   }
 }
+
