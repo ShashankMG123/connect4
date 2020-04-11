@@ -47,8 +47,8 @@ function play(){
               cols[move] += 1;
               changeColor(myGamePiece,pos,"blue");
             }
-            var board = boardState();
-            checkwinner(board);
+	          var board = boardState();
+	          checkwinner(board);
             flag = 1;
           }
         }
@@ -94,15 +94,16 @@ function checkwinner(board){
       var res = parseInt(res);
       if(res == -1 || res == 1){
         if(res == 1)
-        {
-          alert("Blue Won");
-          location.reload(true);
-        }
+	  {
+            alert("Blue Won");
+	    location.reload(true);
+	  }
+
         else
-        {
-          alert("Red Won");
-          location.reload(true);
-        }
+	  {
+            alert("Red Won");
+	    location.reload(true);
+	  }
       }
     }
   };
