@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<instructions>
+  <rules>1. To play the connect-4 game please click on one of the buttons, which represent the column into which you would like to insert.</rules>
+  <rules>2. After playing your move, the computer makes its move intelligently.</rules>
+  <rules>3. The goal is to form a line of four continuous pieces of your colour vertically, horizontly or diagonally.</rules>
+  <rules>4. You cannot take out your piece once you have inserted into a column.</rules>
+</instructions>
+
+</rss>
